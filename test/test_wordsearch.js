@@ -36,3 +36,21 @@ describe("#wordSearch()", function() {
     assert.isTrue(result);
   });
 });
+
+it("should return false if the word is longer than any row or column", function() {
+  const result = wordSearch([
+    ['A', 'B', 'C'],
+    ['D', 'E', 'F'],
+    ['G', 'H', 'I'],
+  ], 'ABCDEFGHI');
+  assert.isFalse(result);
+});
+
+it("should return false for an empty word", function() {
+  const result = wordSearch([
+    ['A', 'B', 'C'],
+    ['D', 'E', 'F'],
+    ['G', 'H', 'I'],
+  ], '');
+  assert.isFalse(result);
+});
